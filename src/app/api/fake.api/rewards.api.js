@@ -21,6 +21,16 @@ const rewards = [
     }
 ]
 
-export function fetchAll() {
-    return rewards
+if (!localStorage.getItem("rewards")) {
+    localStorage.setItem("rewards", JSON.stringify(rewards));
 }
+const fetchAll = () =>
+    new Promise((resolve) => {
+        window.setTimeout(function () {
+            resolve(JSON.parse(localStorage.getItem("rewards")));
+        }, 2000);
+    });
+
+export default {
+    fetchAll
+};

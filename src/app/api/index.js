@@ -1,5 +1,5 @@
-import * as tasks from "./fake.api/tasks.api"
-import * as rewards from "./fake.api/rewards.api"
+import tasks from "./fake.api/tasks.api"
+import rewards from "./fake.api/rewards.api"
 const API = {
     tasks,
     rewards

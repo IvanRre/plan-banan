@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import TextField from "../../common/form/textField";
-import SelectField from "../../common/form/selectField";
-import RadioField from "../../common/form/radio.Field";
 import API from "../../../api";
 
 const EditTaskPage = () => {
-    const complexity = [{name:"easy",coin:"1"},{name:"norm",coin:"4"},{name:"hard",coin:"10"}]
     const [data, setData] = useState({
         name: "",
         complexity: "",
@@ -26,23 +23,12 @@ const EditTaskPage = () => {
                 onChange={handleChange}
                 // error={errors.name}
             />
-            <SelectField
-                label="Сложность"
-                defaultOption="Ну что,ты выберешь уже..."
-                options={complexity}
-                name="complexity"
+            <TextField
+                label="Описание"
+                name="info"
+                value={data.name}
                 onChange={handleChange}
-                value={data.complexity}
-            />
-            <RadioField
-                options={[
-                    { name: "Да", value: "repeat" },
-                    { name: "Нет", value: "norepeat" },
-                ]}
-                value={data.repeat}
-                name="repeat"
-                onChange={handleChange}
-                label="Повторять"
+                // error={errors.name}
             />
             <button
                 type="submit"

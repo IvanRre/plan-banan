@@ -5,13 +5,18 @@ const NavBar = ({coins}) => {
     return (
         <ul className="nav">
             <li className="nav-item">
+                <Link className="nav-link " aria-current="page" to="/main">
+                    Главная
+                </Link>
+            </li>
+            <li className="nav-item">
                 <Link className="nav-link " aria-current="page" to="/tasks">
-                    Main
+                    Проекты
                 </Link>
             </li>
             <li className="nav-item">
                 <Link className="nav-link " aria-current="page" to="/analytics">
-                    Analytics
+                    Аналитика
                 </Link>
             </li>
             <li className="nav-item">
